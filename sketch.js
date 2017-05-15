@@ -1,4 +1,7 @@
 let game;
+let beginner;
+let medium;
+let expert;
 
 function createNewGame (lines = -1, cols = -1, mines = -1) {
 	if (lines === -1 && game === undefined) {
@@ -14,9 +17,19 @@ function createNewGame (lines = -1, cols = -1, mines = -1) {
 	resizeCanvas (cell_size * cols, cell_size * lines);
 }
 
+function myCreateButton (varName, str, lines, cols, mines) {
+	varName = createButton (str);
+	varName.mousePressed(() => createNewGame(lines, cols, mines));
+	varName.parent('buttons');
+}
+
 function setup() {
-	createCanvas (602, 602); // width, height
+	let canvas = createCanvas (602, 602); // width, height
+	canvas.parent('p5sketch');
 	createNewGame(10,10,15);
+	myCreateButton(beginner, 'Beginner', 9, 9, 10);
+	myCreateButton(medium, 'Medium', 16, 16, 40);
+	myCreateButton(expert, 'Expert', 16, 30, 99);
 }
 
 function draw() {
