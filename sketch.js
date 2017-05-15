@@ -20,7 +20,7 @@ function createNewGame (lines = -1, cols = -1, mines = -1) {
 function myCreateButton (varName, str, lines, cols, mines) {
 	varName = createButton (str);
 	varName.mousePressed(() => createNewGame(lines, cols, mines));
-	varName.parent('buttons');
+	varName.parent('buttons_container');
 }
 
 function setup() {

@@ -1,11 +1,23 @@
-#p5sketch {
+/*#p5sketch {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex: none;
+}*/
+
+body {
+	margin: 0;
 }
 
-/*#buttons {
-*/
-/*}*/
+#buttons_container {
+	display: flex;
+	flex-flow: column;
+}
+
+#container {
+	display: flex;
+	/*align-items: center;*/
+	flex-flow: row wrap;
+}
 
 
