@@ -30,6 +30,7 @@ function setup() {
 	myCreateButton(beginner, 'Beginner', 9, 9, 10);
 	myCreateButton(medium, 'Medium', 16, 16, 40);
 	myCreateButton(expert, 'Expert', 16, 30, 99);
+	noLoop();
 }
 
 function draw() {
@@ -41,6 +42,7 @@ function windowResized () {
 	let cols = game.grid.getCols();
 	let cell_size = min (windowWidth/cols, windowHeight/lines);
 	resizeCanvas (cell_size * cols, cell_size * lines);
+	redraw();
 }
 
 function mouseClicked () {// use millis to time event
@@ -73,6 +75,7 @@ function mouseClicked () {// use millis to time event
 			console.log("HOURRA");
 			game.win = true;
 		}
+		redraw();
 	}
 	return false;
 }
