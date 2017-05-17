@@ -18,6 +18,8 @@
 
 
 	<script language="javascript" type="text/javascript" src="sketch.js"></script>
+	<script language="javascript" type="text/javascript" src="game.js"></script>
+	<script language="javascript" type="text/javascript" src="beyondCanvas.js"></script>
 	<!-- this line removes any default padding and style. you might only need one of these values set. -->
 	<!-- /*<style> body {padding: 0; margin: 0;} </style>*/ -->
 </head>
@@ -26,7 +28,14 @@
 	<div id="container">
 
 		<div id="p5sketch" oncontextmenu="return false;"> </div>
-		<div id="buttons_container"> </div>
+		<div id="buttons_container">
+			<div id="counter"> </div>
+			<ul>
+				<li>left click to discover</li>
+				<li>right click to mark a mine</li>
+				<li>middle (wheel) click to discover every non mine neighbor of a cell (use with caution)</li>
+			</ul>
+		</div>
 	</div>
 </body>
 </html>

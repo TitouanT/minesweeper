@@ -9,15 +9,23 @@ body {
 	margin: 0;
 }
 
+#counter {
+	background: #666;
+	border: 2px solid black;
+	border-radius: 5px;
+	align-self:flex-start;
+	padding: 5px;
+}
+
 #buttons_container {
 	display: flex;
 	flex-flow: column;
+	align-items: flex-start;
 }
 
 #container {
 	display: flex;
-	/*align-items: center;*/
-	flex-flow: row wrap;
+	flex-flow: row no-wrap;
 }
 
 
