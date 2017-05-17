@@ -40,19 +40,18 @@ function mouseClicked () {// use millis to time event
 			}
 		}
 		else if (mouseButton === RIGHT) {
-			if (!cell.showed) cell.marked = !cell.marked;
-			if (cell.marked) game.marked++;
-			else game.marked--;
-			updateCounter();
+			if (!cell.showed) {
+				cell.marked = !cell.marked;
+				if (cell.marked) game.marked++;
+				else game.marked--;
+			}
 		}
 		else if (mouseButton === CENTER) {
 			game.revealNeighbor(line, col);
 		}
 
-		if (game.playerWin()) {
-			console.log("HOURRA");
-			game.win = true;
-		}
+		game.playerWin();
+		updateCounter();
 		redraw();
 	}
 	return false;

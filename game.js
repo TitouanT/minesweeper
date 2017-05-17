@@ -27,7 +27,7 @@ let Game = function (lines, cols, nbM) {
 
 	this.playerWin  = function () {
 		if (nbDiscover === lines * cols - nbMines) {
-			// nbDiscover = 0;
+			this.win = true;
 			return true;
 		}
 		return false;

@@ -1,9 +1,14 @@
 function updateCounter() {
-	let nb = max(game.getNbMine() - game.marked, 0);
-	let str = nb > 1 ? nb + " mines left" : "only one last !";
-	if (nb > 1) str = nb + " mines left";
-	else if (nb === 1) str = "only one last !";
-	else str = "";
+	let nb = game.getNbMine() - game.marked;
+	let str;
+	if (game.win) str = "you are a winner!";
+	else if (game.gameOver) str = "outch, it hurts !";
+	else {
+		if (nb > 1) str = nb + " mines left";
+		else if (nb === 1) str = "only one last !";
+		else if (nb === 0) str = "some click away...";
+		else str = "hum, '" + nb + "' mines left doesn't seems odd to you ?"
+	}
 	counter.html(str);
 };
 function createCounter () {
