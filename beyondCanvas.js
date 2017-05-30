@@ -1,13 +1,13 @@
 function updateCounter() {
 	let nb = game.getNbMine() - game.marked;
 	let str;
-	if (game.win) str = "you are a winner!";
-	else if (game.gameOver) str = "outch, it hurts !";
+	if (game.win) str = "You are a winner!";
+	else if (game.gameOver) str = "Outch, it hurts !";
 	else {
 		if (nb > 1) str = nb + " mines left";
-		else if (nb === 1) str = "only one last !";
-		else if (nb === 0) str = "some click away...";
-		else str = "hum, '" + nb + "' mines left doesn't seems odd to you ?"
+		else if (nb === 1) str = "Only one last !";
+		else if (nb === 0) str = "Some click away...";
+		else str = "Hum, '" + nb + "' mines left doesn't seems odd to you ?"
 	}
 	counter.html(str);
 };
